@@ -1,0 +1,63 @@
+header a {
+    color: white;
+}
+
+header a:hover {
+    color: rgb(125, 125, 125);
+}
+
+header a:active {
+    color: red;
+}
+
+.iconebas {
+    font-size: 3rem;
+    text-anchor: middle;
+}
+
+/* Partie footer */
+.fin {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between; 
+    color: white;
+    padding: 0 2em;
+}
+
+.fin nav h2 {
+    font-size:1.3rem;
+    margin-bottom:10px;
+    margin-top:0
+}
+
+.fin nav h2::after {
+    content:"";
+    display:block;
+    background-color:red;
+    height:6px;
+    width:50px;
+    margin-right:auto
+}
+
+footer hr {
+    border-top : 96px solid white
+}
+
+Footer nav {
+    margin: 1em 0;
+}
+
+footer address {
+    margin-top: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    color: white;
+}
+/* Fin Partie footer */
+
