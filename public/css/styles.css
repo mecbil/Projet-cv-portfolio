@@ -6,10 +6,6 @@ header a:hover {
     color: rgb(125, 125, 125);
 }
 
-header a:active {
-    color: red;
-}
-
 .iconebas {
     font-size: 3rem;
     text-anchor: middle;
