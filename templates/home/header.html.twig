@@ -19,25 +19,25 @@
                     </a>
                 </li>
                 <li class="text-center">
-                    <a href="experiences.html.twig" class="nav-link">
+                    <a href="{{ path('experiences') }}" class="nav-link {{ (activated)=='experiences' ? 'disabled' : '' }}">
                         <i class="fa fa-history fa-2x" aria-hidden="true"></i>
-                        <br>Expérience
+                        <br>Expériences
                     </a>
                 </li>
                 <li class="text-center">
-                    <a href="educations.html.twig" class="nav-link">
+                    <a href="{{ path('education') }}" class="nav-link {{ (activated)=='education' ? 'disabled' : '' }}">
                         <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
                         <br>Education
                     </a>
                 </li>
                 <li class="text-center">
-                    <a href="portfolio.html.twig" class="nav-link">
+                    <a href="{{ path('portfolio') }}" class="nav-link {{ (activated)=='portfolio' ? 'disabled' : '' }}">
                         <i class="fa fa-briefcase fa-2x" aria-hidden="true"></i>
                         <br>Portfolio
                     </a>
                 </li>
                 <li class="text-center">
-                    <a href="contact.html.twig" class="nav-link">
+                    <a href="{{ path('competences') }}" class="nav-link {{ (activated)=='contact' ? 'disabled' : '' }}">
                         <i class="fa fa-address-book fa-2x" aria-hidden="true"></i>
                         <br>Contact
                     </a>

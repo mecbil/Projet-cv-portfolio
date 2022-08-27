@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Education{% endblock %}
+ 
+{% block body %}   
+    {{ include(asset ('home/header.html.twig')) }}
+    Education
+    {{ include(asset ('home/footer.html.twig')) }}    				
+{% endblock %}
+{% block javascripts %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ asset('js/loadmore.js') }}">></script>
+    <script src="https://kit.fontawesome.com/dbbb09a020.js" crossorigin="anonymous"></script>
+{% endblock %}
