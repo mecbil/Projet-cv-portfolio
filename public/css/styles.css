@@ -1,3 +1,30 @@
+h1 {
+    font-size: 2rem!important;
+    margin-bottom:20px
+}
+h1::first-letter {
+    background-color: rgb(125, 125, 125);
+    color: black;
+    font-size: 3rem;
+    padding: 0 6px;
+    margin-right: 3px
+}
+
+article {
+    background-color: brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+article img {
+    padding: 8px;
+    margin-right: 20px;
+    width: 180px;
+    height: 200px;
+
+}
+
 header a {
     color: white;
 }
