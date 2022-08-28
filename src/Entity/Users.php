@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -34,6 +36,16 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Competences::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $competences;
+
+    public function __construct()
+    {
+        $this->competences = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -122,5 +134,39 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    function __toString(){
+        return $this->getEmail();
+      }
+
+    /**
+     * @return Collection<int, Competences>
+     */
+    public function getCompetences(): Collection
+    {
+        return $this->competences;
+    }
+
+    public function addCompetence(Competences $competence): self
+    {
+        if (!$this->competences->contains($competence)) {
+            $this->competences[] = $competence;
+            $competence->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompetence(Competences $competence): self
+    {
+        if ($this->competences->removeElement($competence)) {
+            // set the owning side to null (unless already changed)
+            if ($competence->getUser() === $this) {
+                $competence->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }
