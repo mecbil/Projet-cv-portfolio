@@ -1,11 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Expériences{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="css/styles.css" type="text/css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+             <link rel="stylesheet" href="css/stylesexp.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
  
 {% block body %}   
     {{ include(asset ('home/header.html.twig')) }}
-    Expériences
-    {{ include(asset ('home/footer.html.twig')) }}    				
+    <section class="container">
+        <button class="btn btn-block btn-secondary mt-1 ">
+            <h1>Expériences : Mes experiences professionnelles</h1>       
+        </button>
+        <div class="row m-2">
+        {% for experience in experiences %}             
+            <div class="col-12 col-md-6 col-lg-4 mt-1">
+                <div class="card text-center">
+                    <div id="competences" class="card-body bg-dark">
+                        <h5 class="card-title"><h2 class="text-{{experience.color}}"> {{experience.poste}}</h2>
+                        <small class="text-info">{{experience.duree}}</small>
+                            {# <div class="progress ">
+                                <div class="progress-bar {{competence.color}}" role="progressbar" style="width: {{competence.taux}}%">{{competence.taux}}</div> 
+                            </div> #}
+                        <hr>
+                        <p class="text-light"> {{experience.content}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+    {{ include(asset ('home/footer.html.twig')) }}
+
 {% endblock %}
 {% block javascripts %}
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

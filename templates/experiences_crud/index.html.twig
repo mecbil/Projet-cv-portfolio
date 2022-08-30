@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Experiences index{% endblock %}
+
+{% block body %}
+    <h1>Experiences index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Poste</th>
+                <th>Content</th>
+                <th>Duree</th>
+                <th>Lieu</th>
+                <th>Color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for experience in experiences %}
+            <tr>
+                <td>{{ experience.id }}</td>
+                <td>{{ experience.poste }}</td>
+                <td>{{ experience.content }}</td>
+                <td>{{ experience.duree }}</td>
+                <td>{{ experience.lieu }}</td>
+                <td>{{ experience.color }}</td>
+                <td>
+                    <a href="{{ path('app_experiences_crud_show', {'id': experience.id}) }}">show</a>
+                    <a href="{{ path('app_experiences_crud_edit', {'id': experience.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_experiences_crud_new') }}">Create new</a>
+{% endblock %}
