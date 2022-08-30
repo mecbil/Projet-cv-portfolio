@@ -13,14 +13,14 @@
             <div class="col-12 col-md-6 col-lg-3">
                 <div class="card mt-1 mb-1 text-center">
                     <div id="competences" class="card-body">
-                        <h5 class="card-title"><img src="images/{{competence.image}}" alt="" width="32" height="32" title="Bootstrap"> {{competence.title}}</h5>
+                        <h2 class="card-title"><img src="images/{{competence.image}}" alt="" width="32" height="32" title="Bootstrap"> {{competence.title}}</h2>
                             <div class="progress ">
                                 <div class="progress-bar {{competence.color}}" role="progressbar" style="width: {{competence.taux}}%">{{competence.taux}}</div> 
                             </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+        {% endfor %}
         </div>
     </section>
     {{ include(asset ('home/footer.html.twig')) }}    				

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Experiences{% endblock %}
+
+{% block body %}
+    <h1>Experiences</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ experience.id }}</td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>{{ experience.poste }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ experience.content }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ experience.duree }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ experience.lieu }}</td>
+            </tr>
+                <tr>
+                <th>Color</th>
+                <td>{{ experience.color }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_experiences_crud_index') }}">back to list</a>
+
+    <a href="{{ path('app_experiences_crud_edit', {'id': experience.id}) }}">edit</a>
+
+    {{ include('experiences_crud/_delete_form.html.twig') }}
+{% endblock %}
