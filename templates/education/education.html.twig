@@ -1,10 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Education{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styleseduc.css">
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
  
 {% block body %}   
     {{ include(asset ('home/header.html.twig')) }}
-    Education
+    <div class="m-1">  
+        <button class="btn btn-block btn-primary ">
+                        Education : Quelques diplômes et attestations Obtenus
+        </button>
+    </div>
+    <div class="container row mx-auto mb-2">
+        {% for education in educations %}
+        <div class="card-wrapper {{education.direction}}">
+        <div class="card">
+            <div class="front {{education.color}} p-1">{{education.title}}</div>
+            <div class="back p-2">{{education.duree}}<br>{{education.content}}</div>
+        </div>
+        </div>
+        {% endfor %}   
+    </div>
     {{ include(asset ('home/footer.html.twig')) }}    				
 {% endblock %}
 {% block javascripts %}

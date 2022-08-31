@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Educations index{% endblock %}
+
+{% block body %}
+    <h1>Educations index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Duree</th>
+                <th>Content</th>
+                <th>Direction</th>
+                <th>Color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for education in educations %}
+            <tr>
+                <td>{{ education.id }}</td>
+                <td>{{ education.title }}</td>
+                <td>{{ education.duree }}</td>
+                <td>{{ education.content }}</td>
+                <td>{{ education.direction }}</td>
+                <td>{{ education.color }}</td>
+                <td>
+                    <a href="{{ path('app_education_crud_show', {'id': education.id}) }}">show</a>
+                    <a href="{{ path('app_education_crud_edit', {'id': education.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_education_crud_new') }}">Create new</a>
+{% endblock %}
