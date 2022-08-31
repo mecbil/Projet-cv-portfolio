@@ -86,13 +86,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0px dashed #f0ad4e;
+  border: 0px dashed #0000;
   border-radius: 4px;
     text-align: center;
 }
 .card .front {
   color: #f7f7f7;
-  background:  #292b2c ;
+  /* background:  #6f42c1 ; */
   font-weight: 700;
   font-size: 1rem;
     text-align: center;
@@ -100,7 +100,7 @@
 .card .back {
   font-size: 1.5rem;
   color: #FFFFFF;
-  background: #f0ad4e;
+  background: #000000;
 }
 .back li {
     color : white;
