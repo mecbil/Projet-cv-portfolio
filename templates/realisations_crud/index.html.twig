@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Realisations index{% endblock %}
+
+{% block body %}
+    <h1>Realisations index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Link</th>
+                <th>Content</th>
+                <th>Color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for realisation in realisations %}
+            <tr>
+                <td>{{ realisation.id }}</td>
+                <td>{{ realisation.image }}</td>
+                <td>{{ realisation.link }}</td>
+                <td>{{ realisation.content }}</td>
+                <td>{{ realisation.color }}</td>
+                <td>
+                    <a href="{{ path('app_realisations_crud_show', {'id': realisation.id}) }}">show</a>
+                    <a href="{{ path('app_realisations_crud_edit', {'id': realisation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_realisations_crud_new') }}">Create new</a>
+{% endblock %}

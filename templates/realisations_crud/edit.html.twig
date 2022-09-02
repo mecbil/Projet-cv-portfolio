@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Realisations{% endblock %}
+
+{% block body %}
+    <h1>Edit Realisations</h1>
+
+    {{ include('realisations_crud/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_realisations_crud_index') }}">back to list</a>
+
+    {{ include('realisations_crud/_delete_form.html.twig') }}
+{% endblock %}

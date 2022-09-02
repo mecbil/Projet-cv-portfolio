@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Realisations{% endblock %}
+
+{% block body %}
+    <h1>Create new Realisations</h1>
+
+    {{ include('realisations_crud/_form.html.twig') }}
+
+    <a href="{{ path('app_realisations_crud_index') }}">back to list</a>
+{% endblock %}
