@@ -21,6 +21,7 @@ class ExperiencesCrudController extends AbstractController
     public function index(ExperiencesRepository $experiencesRepository): Response
     {
         return $this->render('experiences_crud/index.html.twig', [
+            'activated' => 'experiences',
             'experiences' => $experiencesRepository->findAll(),
         ]);
     }
@@ -42,6 +43,7 @@ class ExperiencesCrudController extends AbstractController
 
         return $this->renderForm('experiences_crud/new.html.twig', [
             'experience' => $experience,
+            'activated' => 'experiences',
             'form' => $form,
         ]);
     }
@@ -52,6 +54,7 @@ class ExperiencesCrudController extends AbstractController
     public function show(Experiences $experience): Response
     {
         return $this->render('experiences_crud/show.html.twig', [
+            'activated' => 'experiences',
             'experience' => $experience,
         ]);
     }
@@ -71,6 +74,7 @@ class ExperiencesCrudController extends AbstractController
         }
 
         return $this->renderForm('experiences_crud/edit.html.twig', [
+            'activated' => 'experiences',
             'experience' => $experience,
             'form' => $form,
         ]);

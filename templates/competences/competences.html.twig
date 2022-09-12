@@ -3,14 +3,13 @@
 {% block title %}Compétences{% endblock %}
  
 {% block body %}   
-    {{ include(asset ('home/header.html.twig')) }}
     <section class="container">
         <button class="btn btn-block btn-primary mt-1 ">
             <h1>Compétences : En constante évolution</h1>       
         </button>
         <div class="row">
         {% for competence in competences %}             
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card mt-1 mb-1 text-center">
                     <div id="competences" class="card-body">
                         <h2 class="card-title"><img src="images/{{competence.image}}" alt="" width="32" height="32" title="Bootstrap"> {{competence.title}}</h2>
@@ -23,10 +22,4 @@
         {% endfor %}
         </div>
     </section>
-    {{ include(asset ('home/footer.html.twig')) }}    				
-{% endblock %}
-{% block javascripts %}
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="{{ asset('js/loadmore.js') }}">></script>
-    <script src="https://kit.fontawesome.com/dbbb09a020.js" crossorigin="anonymous"></script>
 {% endblock %}
