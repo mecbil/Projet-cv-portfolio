@@ -4,27 +4,24 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/stylesexp.css">
+    <link rel="stylesheet" href="css/stylesexp.css">
     {{ encore_entry_link_tags('app') }}
 {% endblock %}
  
-{% block body %}   
-    {{ include(asset ('home/header.html.twig')) }}
-    <section class="container">
+{% block body %}
+ 
+    <section class="container text-center">
         <button class="btn btn-block btn-secondary mt-1 ">
             <h1>Expériences : Mes experiences professionnelles</h1>       
         </button>
-        <div class="row m-2">
+        <div class="row mr-0">
         {% for experience in experiences %}             
-            <div class="col-12 col-md-6 col-lg-4 mt-1">
-                <div class="card text-center">
+            <div class="col">
+                <div class="card mx-auto m-1">
                     <div id="competences" class="card-body bg-dark">
-                        <h5 class="card-title"><h2 class="text-{{experience.color}}"> {{experience.poste}}</h2>
+                        <h5 class="card-title"><h2 class="text-{{experience.color}}">{{experience.poste}}</h2>
                         <small class="text-info">{{experience.duree}}</small>
-                            {# <div class="progress ">
-                                <div class="progress-bar {{competence.color}}" role="progressbar" style="width: {{competence.taux}}%">{{competence.taux}}</div> 
-                            </div> #}
-                        <hr>
+                        <hr class-"m-0">
                         <p class="text-light"> {{experience.content}}</p>
                     </div>
                 </div>
@@ -32,11 +29,4 @@
         {% endfor %}
         </div>
     </section>
-    {{ include(asset ('home/footer.html.twig')) }}
-
-{% endblock %}
-{% block javascripts %}
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="{{ asset('js/loadmore.js') }}">></script>
-    <script src="https://kit.fontawesome.com/dbbb09a020.js" crossorigin="anonymous"></script>
 {% endblock %}

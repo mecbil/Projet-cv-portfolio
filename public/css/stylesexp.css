@@ -38,8 +38,12 @@
     transition: all 0.6s;
 }
 
+hr {
+    margin-top: 0;
+}
+
 .card::after {
-    content: "Poste:";
+    /* content: "Poste:"; */
     font-size: 50px;
     position: absolute;
     top: 0;
