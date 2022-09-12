@@ -21,6 +21,7 @@ class EducationCrudController extends AbstractController
     public function index(EducationsRepository $educationsRepository): Response
     {
         return $this->render('education_crud/index.html.twig', [
+            'activated' => 'education',
             'educations' => $educationsRepository->findAll(),
         ]);
     }

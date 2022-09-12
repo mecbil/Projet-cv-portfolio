@@ -2,12 +2,26 @@ h1 {
     font-size: 2rem!important;
     margin-bottom:20px
 }
+
 h1::first-letter {
     background-color: rgb(125, 125, 125);
     color: black;
     font-size: 3rem;
     padding: 0 6px;
     margin-right: 3px
+}
+
+.cadre {
+    margin-left: -12px;
+}
+
+.imghome {
+    width: 75%;
+}
+
+.shome h2{
+    font-size: 2rem;
+    width: 75%
 }
 
 article {
@@ -35,12 +49,13 @@ header a:hover {
 
 .iconebas {
     font-size: 3rem;
-    text-anchor: middle;
+    /* text-anchor: middle; */
 }
 
 /* Partie footer */
 .fin {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content:space-between; 
     color: white;
@@ -74,13 +89,54 @@ footer address {
     margin-top: 1em;
 }
 
+footer a:link 
+{ 
+    text-decoration:none; 
+}
+
 footer a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 
 footer a:hover {
     color: white;
 }
 /* Fin Partie footer */
+@media screen and (min-width: 200px)and (max-width: 993px){
 
+    .imghome {
+        width: 100%;
+    }
+    .shome h2{
+        margin: 1rem 0 1rem 0 !important;
+        font-size: 1.5rem;
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 200px)and (max-width: 389px){
+
+    .fin {
+        display: block;
+    }
+
+    address {
+        text-align: center;
+    }
+
+    footer hr {
+        border-top : 4px solid white;
+        width: 200px;
+    }
+
+    .fin nav h2::after {
+        content:"";
+        display:block;
+        background-color:red;
+        height:6px;
+        width:100px;
+        margin:auto
+    }
+    
+}

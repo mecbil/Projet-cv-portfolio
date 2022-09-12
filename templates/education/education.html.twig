@@ -8,27 +8,24 @@
     {{ encore_entry_link_tags('app') }}
 {% endblock %}
  
-{% block body %}   
-    {{ include(asset ('home/header.html.twig')) }}
-    <div class="m-1">  
-        <button class="btn btn-block btn-primary ">
-                        Education : Quelques diplômes et attestations Obtenus
+{% block body %}
+    <section class="container text-center">
+        <button class="btn btn-block btn-primary mt-1">
+            <h1>Education : Quelques diplômes et attestations Obtenus</h1>
         </button>
-    </div>
-    <div class="container row mx-auto mb-2">
-        {% for education in educations %}
-        <div class="card-wrapper {{education.direction}}">
-        <div class="card">
-            <div class="front {{education.color}} p-1">{{education.title}}</div>
-            <div class="back p-2">{{education.duree}}<br>{{education.content}}</div>
-        </div>
-        </div>
-        {% endfor %}   
-    </div>
-    {{ include(asset ('home/footer.html.twig')) }}    				
-{% endblock %}
-{% block javascripts %}
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="{{ asset('js/loadmore.js') }}">></script>
-    <script src="https://kit.fontawesome.com/dbbb09a020.js" crossorigin="anonymous"></script>
+        <div class="row mr-0">
+            <div class="col">
+                {% for education in educations %}
+                
+                    <div class="card-wrapper {{education.direction}} ml-0">
+                        <div class="card">
+                            <div class="front {{education.color}}">{{education.title}}</div>
+                            <div class="back">{{education.duree}}<br>{{education.content}}</div>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+            </div>
+        <div>
+    </section>
 {% endblock %}
