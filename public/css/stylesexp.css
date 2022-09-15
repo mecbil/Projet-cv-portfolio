@@ -4,16 +4,6 @@
     box-sizing: border-box;
 }
 
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-    font-family: sans-serif;
-} */
-
 .card {
     width: 333px;
     height: 300px;
@@ -43,7 +33,7 @@ hr {
 }
 
 .card::after {
-    /* content: "Poste:"; */
+    content: "Poste:";
     font-size: 50px;
     position: absolute;
     top: 0;
