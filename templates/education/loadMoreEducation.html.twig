@@ -1,0 +1,10 @@
+                {% for education in educations %}
+                
+                    <div class="card-wrapper {{education.direction}} ml-0">
+                        <div class="card">
+                            <div class="front {{education.color}}">{{education.title}}</div>
+                            <div class="back">{{education.duree}}<br>{{education.content}}</div>
+                        </div>
+                    </div>
+                
+                {% endfor %}

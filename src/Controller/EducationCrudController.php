@@ -43,6 +43,7 @@ class EducationCrudController extends AbstractController
 
         return $this->renderForm('education_crud/new.html.twig', [
             'education' => $education,
+            'activated' => 'education',
             'form' => $form,
         ]);
     }
@@ -53,6 +54,7 @@ class EducationCrudController extends AbstractController
     public function show(Educations $education): Response
     {
         return $this->render('education_crud/show.html.twig', [
+            'activated' => 'education',
             'education' => $education,
         ]);
     }
@@ -72,6 +74,7 @@ class EducationCrudController extends AbstractController
         }
 
         return $this->renderForm('education_crud/edit.html.twig', [
+            'activated' => 'education',
             'education' => $education,
             'form' => $form,
         ]);
