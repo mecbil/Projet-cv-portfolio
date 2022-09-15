@@ -74,11 +74,14 @@
   transform: rotate3d(1, -1, 0, 180deg);
 }
 
+.pagination {
+  justify-content: center;
+}
 
 .card-wrapper,
 .card {
   width: 200px;
-  height: 200px;
+  height: 150px;
   margin: 10px;
 }
 .card .front,
