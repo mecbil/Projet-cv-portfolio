@@ -22,6 +22,7 @@ class RealisationsCrudController extends AbstractController
     {
         return $this->render('realisations_crud/index.html.twig', [
             'realisations' => $realisationsRepository->findAll(),
+            'activated' => 'portfolio',
         ]);
     }
 
@@ -43,6 +44,7 @@ class RealisationsCrudController extends AbstractController
         return $this->renderForm('realisations_crud/new.html.twig', [
             'realisation' => $realisation,
             'form' => $form,
+            'activated' => 'portfolio',
         ]);
     }
 
@@ -53,6 +55,7 @@ class RealisationsCrudController extends AbstractController
     {
         return $this->render('realisations_crud/show.html.twig', [
             'realisation' => $realisation,
+            'activated' => 'portfolio',
         ]);
     }
 
@@ -73,6 +76,7 @@ class RealisationsCrudController extends AbstractController
         return $this->renderForm('realisations_crud/edit.html.twig', [
             'realisation' => $realisation,
             'form' => $form,
+            'activated' => 'portfolio',
         ]);
     }
 

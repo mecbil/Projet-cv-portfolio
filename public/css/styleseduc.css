@@ -3,6 +3,11 @@
   display: inline-block;
   perspective: 1000px;
 }
+
+/* .card-header {
+  width: 240px;
+
+} */
 .card-wrapper .card {
   position: relative;
   cursor: pointer;
@@ -80,9 +85,9 @@
 
 .card-wrapper,
 .card {
-  width: 200px;
+  width: 270px;
   height: 150px;
-  margin: 10px;
+  /* margin: 10px; */
 }
 .card .front,
 .card .back {
@@ -91,13 +96,15 @@
   justify-content: center;
   border: 0px dashed #0000;
   border-radius: 4px;
-    text-align: center;
+  text-align: center;
+  width: 270px;
+  height: 150px;
 }
 .card .front {
   color: #f7f7f7;
   font-weight: 700;
   font-size: 1rem;
-    text-align: center;
+  text-align: center;
 }
 .card .back {
   font-size: 1.5rem;

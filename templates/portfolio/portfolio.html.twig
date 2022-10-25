@@ -1,26 +1,68 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Portfolio{% endblock %}
- 
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styleReali.css">
+{% endblock %}
+
 {% block body %}   
-    <section class="container">
+    <section class="container text-center">
         <button class="btn btn-block btn-primary mt-1 ">
             <h1>Portfolio : Quelques réalisations</h1>       
         </button>
-        <div class="row">
+        <div class="row mr-0">
         {% for realisation in realisations %} 
-            <div class="col-12 col-md-6 col-lg-3">
+            {# <div class="col-12 col-md-6 col-lg-3">
                 <div class="card mt-1 mb-1 text-center">
                 <p class="card-title bg-{{realisation.color}}">{{realisation.content}}</p>
                     {# <div id="competences" class="card-body"> #}
                         
-                        <img class="mx-auto" src="images/{{realisation.image}}" alt="" width="200" height="200" title="Bootstrap">
+                        {# <img class="mx-auto" src="images/{{realisation.image}}" alt="" width="200" height="200" title="Bootstrap">
                         <hr>
                         <a href="http://mnbil.free.fr" target="_blank" class="btn btn-{{realisation.color}} stretched-link">Visiter</a>
-                    {# </div> #}
                 </div>
-            </div>            
+            </div> #}
+            {# <div class="col-12 col-md-6 col-lg-3 mt-2">
+                <div class="card border-success mb-2" style="max-width: 14rem;">
+                    <div class="card-header bg-{{realisation.color}}">{{realisation.link}}</div>
+                        <div class="card-body text-success">
+                        <img class="mx-auto" src="images/{{realisation.image}}" alt="" width="200" height="200" title="Bootstrap">
+                            <h5 class="card-title">Success card title</h5>
+                            
+                        </div>
+                    <div class="card-footer bg-transparent border-success">Footer</div>
+                </div>
+            </div>
+            </div> #}
+            
+                {# <div class="col"> #}
+                    <div class="col-12 col-md-6 col-lg-3 mt-2"> 
+                        <a href="{{realisation.link}}" target="_blank">
+                            <div class="card-wrapper flip-right ml-0">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="card text-center">
+                                            <div class="card-header bg-{{realisation.color}}">{{realisation.link}}</div>
+                                            {# <div class="card-body"> #}
+                                                <img class=" mx-auto" src="images/{{realisation.image}}" alt="" width="100%" height="170" title="Bootstrap">
+                                            {# </div> #}
+                                            {# <div class="card-footer text-muted">
+                                                2 days ago
+                                            </div> #}
+                                        </div>
+                                    </div>
+                                    <div class="back">{{realisation.content}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {# </div> #}
+            
         {% endfor %}
+    </div>
         </div>
     </section>
 {% endblock %}
