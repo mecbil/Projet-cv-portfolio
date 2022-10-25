@@ -4,10 +4,6 @@
   perspective: 1000px;
 }
 
-/* .card-header {
-  width: 240px;
-
-} */
 .card-wrapper .card {
   position: relative;
   cursor: pointer;
@@ -17,7 +13,7 @@
 }
 .card-wrapper .card .front,
 .card-wrapper .card .back {
-  position: absolute;
+  position: absolute ;
   top: 0;
   left: 0;
   width: 100%;
@@ -86,7 +82,8 @@
 .card-wrapper,
 .card {
   width: 270px;
-  height: 150px;
+  height: 230px;
+  border: 0;
   /* margin: 10px; */
 }
 .card .front,
@@ -97,8 +94,6 @@
   border: 0px dashed #0000;
   border-radius: 4px;
   text-align: center;
-  width: 270px;
-  height: 150px;
 }
 .card .front {
   color: #f7f7f7;
