@@ -4,10 +4,31 @@
  
 {% block body %}
   <section class=" text-center d-sm-bloc d-md-block d-lg-flex shome">   
-    <img class="img-fluid cover  imghome" src="images/test.png" alt="image de présentation">
+    {# <img class="img-fluid cover  imghome" src="images/test.png" alt="image de présentation">
     <h2 class="text-center mx-auto my-auto">&ldquo;Nous ne pouvons pas prédire où nous conduira 
         la Révolution Informatique. Tout ce que nous savons avec certitude, c'est que, 
         quand on y sera enfin, on n'aura pas assez de RAM.&rdquo;
-    </h2>
+    </h2> #}
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/carousel1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/carousel2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/carousel3.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </section>
 {% endblock %}
